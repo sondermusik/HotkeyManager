@@ -14,6 +14,23 @@
 		C1DAFD8A2D09BE3E00D8B418 /* HotkeyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFD892D09BE3E00D8B418 /* HotkeyManagerTests.swift */; };
 		C1DAFD942D09BE3E00D8B418 /* HotkeyManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFD932D09BE3E00D8B418 /* HotkeyManagerUITests.swift */; };
 		C1DAFD962D09BE3E00D8B418 /* HotkeyManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFD952D09BE3E00D8B418 /* HotkeyManagerUITestsLaunchTests.swift */; };
+		C1DAFDA62D09CE1B00D8B418 /* MenuBarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDA52D09CE1B00D8B418 /* MenuBarService.swift */; };
+		C1DAFDA82D09CEF000D8B418 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDA72D09CEF000D8B418 /* MenuItem.swift */; };
+		C1DAFDAA2D09CF4000D8B418 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDA92D09CF4000D8B418 /* Application.swift */; };
+		C1DAFDAF2D09D12800D8B418 /* HotkeyManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDAD2D09D12800D8B418 /* HotkeyManager.xcdatamodeld */; };
+		C1DAFDB22D09D1D900D8B418 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDB12D09D1D900D8B418 /* DataController.swift */; };
+		C1DAFDB42D09D38A00D8B418 /* MenuItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDB32D09D38A00D8B418 /* MenuItemType.swift */; };
+		C1DAFDB62D09D3EB00D8B418 /* Hotkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDB52D09D3EB00D8B418 /* Hotkey.swift */; };
+		C1DAFDB82D09D44600D8B418 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDB72D09D44600D8B418 /* KeyCode.swift */; };
+		C1DAFDBC2D09D47500D8B418 /* KeyCodes.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C1DAFDBB2D09D47500D8B418 /* KeyCodes.xcstrings */; };
+		C1DAFDBE2D09D72F00D8B418 /* MenuBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDBD2D09D72F00D8B418 /* MenuBarElement.swift */; };
+		C1DAFDC02D09D88100D8B418 /* ConstMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDBF2D09D88100D8B418 /* ConstMenuBar.swift */; };
+		C1DAFDC52D09DF9000D8B418 /* AccessibilityPermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDC42D09DF9000D8B418 /* AccessibilityPermissionManager.swift */; };
+		C1DAFDC82D09E04700D8B418 /* WorkspaceReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDC72D09E04700D8B418 /* WorkspaceReceiver.swift */; };
+		C1DAFDCC2D09E08400D8B418 /* AppVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDCB2D09E08400D8B418 /* AppVM.swift */; };
+		C1DAFDCE2D09E5DE00D8B418 /* HotkeyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDCD2D09E5DE00D8B418 /* HotkeyVM.swift */; };
+		C1DAFDD02D09EFBA00D8B418 /* SectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDCF2D09EFBA00D8B418 /* SectionListView.swift */; };
+		C1DAFDD22D09EFF700D8B418 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDD12D09EFF700D8B418 /* SectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +62,24 @@
 		C1DAFD8F2D09BE3E00D8B418 /* HotkeyManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotkeyManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DAFD932D09BE3E00D8B418 /* HotkeyManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManagerUITests.swift; sourceTree = "<group>"; };
 		C1DAFD952D09BE3E00D8B418 /* HotkeyManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C1DAFDA22D09BE9D00D8B418 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		C1DAFDA52D09CE1B00D8B418 /* MenuBarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarService.swift; sourceTree = "<group>"; };
+		C1DAFDA72D09CEF000D8B418 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		C1DAFDA92D09CF4000D8B418 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		C1DAFDAE2D09D12800D8B418 /* HotkeyManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotkeyManager.xcdatamodel; sourceTree = "<group>"; };
+		C1DAFDB12D09D1D900D8B418 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		C1DAFDB32D09D38A00D8B418 /* MenuItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemType.swift; sourceTree = "<group>"; };
+		C1DAFDB52D09D3EB00D8B418 /* Hotkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotkey.swift; sourceTree = "<group>"; };
+		C1DAFDB72D09D44600D8B418 /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
+		C1DAFDBB2D09D47500D8B418 /* KeyCodes.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = KeyCodes.xcstrings; sourceTree = "<group>"; };
+		C1DAFDBD2D09D72F00D8B418 /* MenuBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarElement.swift; sourceTree = "<group>"; };
+		C1DAFDBF2D09D88100D8B418 /* ConstMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstMenuBar.swift; sourceTree = "<group>"; };
+		C1DAFDC42D09DF9000D8B418 /* AccessibilityPermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPermissionManager.swift; sourceTree = "<group>"; };
+		C1DAFDC72D09E04700D8B418 /* WorkspaceReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceReceiver.swift; sourceTree = "<group>"; };
+		C1DAFDCB2D09E08400D8B418 /* AppVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVM.swift; sourceTree = "<group>"; };
+		C1DAFDCD2D09E5DE00D8B418 /* HotkeyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyVM.swift; sourceTree = "<group>"; };
+		C1DAFDCF2D09EFBA00D8B418 /* SectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListView.swift; sourceTree = "<group>"; };
+		C1DAFDD12D09EFF700D8B418 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +110,7 @@
 		C1DAFD6B2D09BE3C00D8B418 = {
 			isa = PBXGroup;
 			children = (
+				C1DAFDA22D09BE9D00D8B418 /* ReadMe.md */,
 				C1DAFD762D09BE3C00D8B418 /* HotkeyManager */,
 				C1DAFD882D09BE3E00D8B418 /* HotkeyManagerTests */,
 				C1DAFD922D09BE3E00D8B418 /* HotkeyManagerUITests */,
@@ -96,7 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				C1DAFD772D09BE3C00D8B418 /* HotkeyManagerApp.swift */,
-				C1DAFD792D09BE3C00D8B418 /* ContentView.swift */,
+				C1DAFDA32D09CA3900D8B418 /* Views */,
+				C1DAFDAB2D09D10800D8B418 /* Core */,
 				C1DAFD7B2D09BE3E00D8B418 /* Assets.xcassets */,
 				C1DAFD802D09BE3E00D8B418 /* HotkeyManager.entitlements */,
 				C1DAFD7D2D09BE3E00D8B418 /* Preview Content */,
@@ -127,6 +164,102 @@
 				C1DAFD952D09BE3E00D8B418 /* HotkeyManagerUITestsLaunchTests.swift */,
 			);
 			path = HotkeyManagerUITests;
+			sourceTree = "<group>";
+		};
+		C1DAFDA32D09CA3900D8B418 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFD792D09BE3C00D8B418 /* ContentView.swift */,
+				C1DAFDCF2D09EFBA00D8B418 /* SectionListView.swift */,
+				C1DAFDD12D09EFF700D8B418 /* SectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C1DAFDA42D09CE0800D8B418 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDC72D09E04700D8B418 /* WorkspaceReceiver.swift */,
+				C1DAFDC12D09DF3400D8B418 /* MenuBar */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C1DAFDAB2D09D10800D8B418 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDC92D09E06C00D8B418 /* ViewModel */,
+				C1DAFDC32D09DF6100D8B418 /* Manager */,
+				C1DAFDB92D09D45D00D8B418 /* Constants */,
+				C1DAFDAC2D09D11600D8B418 /* Data */,
+				C1DAFDB02D09D14900D8B418 /* Models */,
+				C1DAFDA42D09CE0800D8B418 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C1DAFDAC2D09D11600D8B418 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDAD2D09D12800D8B418 /* HotkeyManager.xcdatamodeld */,
+				C1DAFDB12D09D1D900D8B418 /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C1DAFDB02D09D14900D8B418 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDA92D09CF4000D8B418 /* Application.swift */,
+				C1DAFDB52D09D3EB00D8B418 /* Hotkey.swift */,
+				C1DAFDA72D09CEF000D8B418 /* MenuItem.swift */,
+				C1DAFDB32D09D38A00D8B418 /* MenuItemType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C1DAFDB92D09D45D00D8B418 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDDB2D0A0DCE00D8B418 /* KeyCodes */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C1DAFDC12D09DF3400D8B418 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDBF2D09D88100D8B418 /* ConstMenuBar.swift */,
+				C1DAFDA52D09CE1B00D8B418 /* MenuBarService.swift */,
+				C1DAFDBD2D09D72F00D8B418 /* MenuBarElement.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		C1DAFDC32D09DF6100D8B418 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDC42D09DF9000D8B418 /* AccessibilityPermissionManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C1DAFDC92D09E06C00D8B418 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDCB2D09E08400D8B418 /* AppVM.swift */,
+				C1DAFDCD2D09E5DE00D8B418 /* HotkeyVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C1DAFDDB2D0A0DCE00D8B418 /* KeyCodes */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDBB2D09D47500D8B418 /* KeyCodes.xcstrings */,
+				C1DAFDB72D09D44600D8B418 /* KeyCode.swift */,
+			);
+			path = KeyCodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1DAFDBC2D09D47500D8B418 /* KeyCodes.xcstrings in Resources */,
 				C1DAFD7F2D09BE3E00D8B418 /* Preview Assets.xcassets in Resources */,
 				C1DAFD7C2D09BE3E00D8B418 /* Assets.xcassets in Resources */,
 			);
@@ -259,7 +393,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1DAFDCE2D09E5DE00D8B418 /* HotkeyVM.swift in Sources */,
+				C1DAFDC52D09DF9000D8B418 /* AccessibilityPermissionManager.swift in Sources */,
+				C1DAFDD22D09EFF700D8B418 /* SectionView.swift in Sources */,
+				C1DAFDB82D09D44600D8B418 /* KeyCode.swift in Sources */,
+				C1DAFDAA2D09CF4000D8B418 /* Application.swift in Sources */,
+				C1DAFDC82D09E04700D8B418 /* WorkspaceReceiver.swift in Sources */,
+				C1DAFDCC2D09E08400D8B418 /* AppVM.swift in Sources */,
+				C1DAFDAF2D09D12800D8B418 /* HotkeyManager.xcdatamodeld in Sources */,
+				C1DAFDB62D09D3EB00D8B418 /* Hotkey.swift in Sources */,
+				C1DAFDB22D09D1D900D8B418 /* DataController.swift in Sources */,
+				C1DAFDB42D09D38A00D8B418 /* MenuItemType.swift in Sources */,
+				C1DAFDC02D09D88100D8B418 /* ConstMenuBar.swift in Sources */,
+				C1DAFDD02D09EFBA00D8B418 /* SectionListView.swift in Sources */,
 				C1DAFD7A2D09BE3C00D8B418 /* ContentView.swift in Sources */,
+				C1DAFDBE2D09D72F00D8B418 /* MenuBarElement.swift in Sources */,
+				C1DAFDA82D09CEF000D8B418 /* MenuItem.swift in Sources */,
+				C1DAFDA62D09CE1B00D8B418 /* MenuBarService.swift in Sources */,
 				C1DAFD782D09BE3C00D8B418 /* HotkeyManagerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +575,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HotkeyManager/Preview Content\"";
+				DEVELOPMENT_TEAM = W8PUMC6S2U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -432,6 +583,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sonder.HotkeyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,6 +602,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HotkeyManager/Preview Content\"";
+				DEVELOPMENT_TEAM = W8PUMC6S2U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -457,6 +610,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sonder.HotkeyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,6 +727,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C1DAFDAD2D09D12800D8B418 /* HotkeyManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1DAFDAE2D09D12800D8B418 /* HotkeyManager.xcdatamodel */,
+			);
+			currentVersion = C1DAFDAE2D09D12800D8B418 /* HotkeyManager.xcdatamodel */;
+			path = HotkeyManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C1DAFD6C2D09BE3C00D8B418 /* Project object */;
 }
