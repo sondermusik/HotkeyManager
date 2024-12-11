@@ -130,23 +130,23 @@ enum KeyCode: Int, CaseIterable {
     case keyCode125 = 125
     case keyCode126 = 126
     case keyCode127 = 127
-
+    
     var displayString: String {
-          let localizationKey = "keyCode\(self.rawValue)"
-          return NSLocalizedString(localizationKey, tableName: "KeyCodes", bundle: .main, comment: "Localized description for \(self)")
-      }
-
-      /// Finds the keycode matching a localized string.
-      /// - Parameter localizedString: The localized string to match.
-      /// - Returns: The `Int` value of the matching keycode, or `nil` if no match is found.
-      static func keyCode(for localizedString: String) -> Int? {
-          let normalizedInput = localizedString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-          for keyCode in KeyCode.allCases {
-              let normalizedKey = keyCode.displayString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-              if normalizedKey == normalizedInput {
-                  return keyCode.rawValue
-              }
-          }
-          return nil
-      }
+        let localizationKey = "keyCode\(self.rawValue)"
+        return NSLocalizedString(localizationKey, tableName: "KeyCodes", bundle: .main, comment: "Localized description for \(self)")
+    }
+    
+    /// Finds the keycode matching a localized string.
+    /// - Parameter localizedString: The localized string to match.
+    /// - Returns: The `Int` value of the matching keycode, or `nil` if no match is found.
+    static func keyCode(for localizedString: String) -> Int? {
+        let normalizedInput = localizedString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        for keyCode in KeyCode.allCases {
+            let normalizedKey = keyCode.displayString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+            if normalizedKey == normalizedInput {
+                return keyCode.rawValue
+            }
+        }
+        return nil
+    }
 }

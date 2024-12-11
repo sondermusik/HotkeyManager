@@ -117,6 +117,7 @@ internal enum ConstMenuBar {
             switch self {
             case .hotkey:           return .hotkey
             case .separator:        return .separator
+            case .section:          return .section
             default:                return .item
             }
         }

@@ -12,17 +12,24 @@ import Cocoa
 
 /// Represents an accessibility element in the macOS menu bar.
 ///
-/// This struct models the data for a single menu bar element, such as menu items or sections, with properties and methods to fetch, resolve, and cache its attributes asynchronously.
+/// This struct models a menu bar element, which can be a menu item, section, or separator. It includes methods
+/// to fetch, resolve, and cache attributes asynchronously, supporting efficient hierarchical traversal of the menu bar.
 ///
-/// The `MenuBarElement` supports hierarchical structures by fetching child elements recursively and processes hotkeys, roles, and other attribute values in a performant, concurrent manner.
-///
-/// ## Features
+/// ### Features:
 /// - Caches accessibility attributes for performance.
-/// - Resolves roles and hotkeys conditionally, optimizing for usage patterns in macOS apps.
-/// - Provides concurrency-safe APIs using `async` and structured task groups.
-/// - Implements a unique identifier (`id`) for precise tracking and debugging.
+/// - Resolves roles and hotkeys dynamically, optimizing for various types of macOS menu items.
+/// - Uses structured concurrency to resolve attributes like title, role, keyCode, and modifiers in parallel.
+/// - Provides a unique identifier for each menu bar element to facilitate precise tracking and debugging.
 ///
-/// - Important: Requires macOS Accessibility Access permission and App Sandboxing disabled to access menu bar elements.
+/// - **Important**: This functionality requires macOS Accessibility Access permissions and the disabling of App Sandboxing to interact with menu bar elements.
+///
+/// ### Traversal of Menu Structure:
+/// - The `MenuBarElement` can recursively fetch child elements (such as submenus) to build a complete menu structure.
+/// - The `getChildren()` method allows for retrieving child elements asynchronously, which is crucial for exploring the hierarchy of the menu bar.
+///
+/// ### Hotkeys:
+/// - Hotkeys are derived from attributes like `AXMenuItemCmdChar` (localized string) and `AXMenuItemCmdVirtualKey` (key code), depending on the platform and application.
+/// - Hotkey modifiers (e.g., Command, Shift) are resolved via the `AXMenuItemCmdModifiers` attribute.
 internal struct MenuBarElement: Identifiable {
     // MARK: - Typealiases
 
@@ -192,9 +199,7 @@ internal struct MenuBarElement: Identifiable {
             }
 
             if attributes.isEmpty {
-//                Crashlytics.crashlytics().record(
-//                    error: FIRMenuBar.Errors.invalidAttribute(String(describing: element)).log()
-//                )
+                print("[MenuBarElement] Error fetching attributes for element: \(element)")
             }
 
             return attributes
@@ -221,7 +226,7 @@ internal struct MenuBarElement: Identifiable {
                 &values
             )
             guard result == .success, let valuesArray = values as? [Any] else {
-//                Crashlytics.crashlytics().record(error: FIRMenuBar.Errors.fetchError(result).log())
+                print("[MenuBarElement] Error fetching raw attribute values: \(result)")
                 return []
             }
             return valuesArray
@@ -314,11 +319,8 @@ internal struct MenuBarElement: Identifiable {
 
     /// Resolves the hotkey modifiers for a menu item.
     ///
-    /// Modifiers include keys such as Command, Shift, Option, and Control. These are determined
-    /// from a modifier mask extracted from the element's attributes.
-    ///
     /// - Parameter attributes: A dictionary containing the accessibility attributes of the element.
-    /// - Returns: A `HotkeyModifier` object representing the resolved modifiers.
+    /// - Returns: The modifiers associated with the hotkey, or nil if not found.
     private  static func resolveModifiers(from attributes: [String: Any]) async -> Int? {
         await withCheckedContinuation { continuation in
             DispatchQueue.global().async {
@@ -334,12 +336,11 @@ internal struct MenuBarElement: Identifiable {
 
     // MARK: - Helpers
 
-    /// Generates a unique identifier for the menu bar element.
+    // MARK: - ID Generation
+
+    /// Generates a unique identifier for this element, combining the process ID, memory address, and index.
     ///
-    /// This identifier is constructed using the process ID, the memory address of the `AXUIElement`,
-    /// and the element's index. This ensures uniqueness across different elements and sessions.
-    ///
-    /// - Returns: A string representing the unique identifier.
+    /// - Returns: A unique string identifier for this menu bar element.
     private  func generateID() -> String {
         var processID: pid_t = 0
         AXUIElementGetPid(element, &processID) // Retrieve process ID
@@ -365,6 +366,8 @@ internal struct MenuBarElement: Identifiable {
             index: index
         )
     }
+
+    // MARK: - Public Methods
 
     func getChildren() async -> AsyncStream<Self> {
         AsyncStream { continuation in
@@ -410,8 +413,7 @@ internal struct MenuBarElement: Identifiable {
                         }
                     }
                 } catch {
-                    // Log errors to aid debugging without disrupting execution for other elements.
-//                    Crashlytics.crashlytics().record(error: FIRMenuBar.Errors.getChildrenFailed(error).log())
+                    print("[MenuBarElement] Failed to get children: \(error)")
                 }
             }
         }
