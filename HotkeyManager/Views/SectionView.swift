@@ -22,13 +22,15 @@ struct SectionView: View {
                 section.children
                     .filter { child in child.type == MenuItemType.section || child.type == MenuItemType.hotkey }
                     .sorted(by: { $0.index < $1.index }),
-                id: \.id // Use the `id` property from `MenuItem`
+                id: \.id
             ) { child in
+                // Check if the child is a section and contains a hotkey
                 if child.type == MenuItemType.section && child.containsHotkey() {
                     SectionView(section: child)
                         .padding(6)
                 }
-
+                
+                // Check if the child is a hotkey
                 if child.type == MenuItemType.hotkey {
                     HStack {
                         Text(child.name)
