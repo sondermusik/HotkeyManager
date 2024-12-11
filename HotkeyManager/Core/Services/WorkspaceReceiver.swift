@@ -33,6 +33,17 @@ internal final class WorkspaceReceiver {
         return filteredApps + additionalApps
     }
 
+    /// Fetches all global apps where activation policy is not `.regular`,
+    /// excluding Apple utility services.
+    func fetchGlobalApps() -> [NSRunningApplication] {
+        let runningApps = workspace.runningApplications
+        return runningApps.filter { app in
+            app.activationPolicy != .regular &&
+            !(app.bundleIdentifier?.hasPrefix("com.apple") ?? false)
+        }
+    }
+
+
     // MARK: - Private Methods
 
     /// Fetches a list of running apps using `NSWorkspace`.
