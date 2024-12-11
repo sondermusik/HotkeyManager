@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="22G830" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="AppEntity" representedClassName="AppEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="display" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="global" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuItemEntity" inverseName="app" inverseEntity="MenuItemEntity"/>
+    </entity>
+    <entity name="MenuItemEntity" representedClassName="MenuItemEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="display" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="index" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="keyCode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modifier" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="type" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="app" maxCount="1" deletionRule="Nullify" destinationEntity="AppEntity" inverseName="items" inverseEntity="AppEntity"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuItemEntity" inverseName="parent" inverseEntity="MenuItemEntity"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MenuItemEntity" inverseName="children" inverseEntity="MenuItemEntity"/>
+    </entity>
+</model>

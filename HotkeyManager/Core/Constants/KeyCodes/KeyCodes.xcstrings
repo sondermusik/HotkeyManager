@@ -1,0 +1,974 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "keyCode0" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A"
+          }
+        }
+      }
+    },
+    "keyCode1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S"
+          }
+        }
+      }
+    },
+    "keyCode2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D"
+          }
+        }
+      }
+    },
+    "keyCode3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F"
+          }
+        }
+      }
+    },
+    "keyCode4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "H"
+          }
+        }
+      }
+    },
+    "keyCode5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "G"
+          }
+        }
+      }
+    },
+    "keyCode6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y"
+          }
+        }
+      }
+    },
+    "keyCode7" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X"
+          }
+        }
+      }
+    },
+    "keyCode8" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C"
+          }
+        }
+      }
+    },
+    "keyCode9" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V"
+          }
+        }
+      }
+    },
+    "keyCode10" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "^"
+          }
+        }
+      }
+    },
+    "keyCode11" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "B"
+          }
+        }
+      }
+    },
+    "keyCode12" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Q"
+          }
+        }
+      }
+    },
+    "keyCode13" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W"
+          }
+        }
+      }
+    },
+    "keyCode14" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E"
+          }
+        }
+      }
+    },
+    "keyCode15" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "R"
+          }
+        }
+      }
+    },
+    "keyCode16" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z"
+          }
+        }
+      }
+    },
+    "keyCode17" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T"
+          }
+        }
+      }
+    },
+    "keyCode18" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1"
+          }
+        }
+      }
+    },
+    "keyCode19" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2"
+          }
+        }
+      }
+    },
+    "keyCode20" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3"
+          }
+        }
+      }
+    },
+    "keyCode21" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4"
+          }
+        }
+      }
+    },
+    "keyCode22" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6"
+          }
+        }
+      }
+    },
+    "keyCode23" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5"
+          }
+        }
+      }
+    },
+    "keyCode24" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "´"
+          }
+        }
+      }
+    },
+    "keyCode25" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9"
+          }
+        }
+      }
+    },
+    "keyCode26" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7"
+          }
+        }
+      }
+    },
+    "keyCode27" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ß"
+          }
+        }
+      }
+    },
+    "keyCode28" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8"
+          }
+        }
+      }
+    },
+    "keyCode29" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        }
+      }
+    },
+    "keyCode30" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+"
+          }
+        }
+      }
+    },
+    "keyCode31" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O"
+          }
+        }
+      }
+    },
+    "keyCode32" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        }
+      }
+    },
+    "keyCode33" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ü"
+          }
+        }
+      }
+    },
+    "keyCode34" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I"
+          }
+        }
+      }
+    },
+    "keyCode35" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "P"
+          }
+        }
+      }
+    },
+    "keyCode36" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􀅇"
+          }
+        }
+      }
+    },
+    "keyCode37" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L"
+          }
+        }
+      }
+    },
+    "keyCode38" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J"
+          }
+        }
+      }
+    },
+    "keyCode39" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ä"
+          }
+        }
+      }
+    },
+    "keyCode40" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "K"
+          }
+        }
+      }
+    },
+    "keyCode41" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ö"
+          }
+        }
+      }
+    },
+    "keyCode42" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "#"
+          }
+        }
+      }
+    },
+    "keyCode43" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ","
+          }
+        }
+      }
+    },
+    "keyCode44" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
+    },
+    "keyCode45" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N"
+          }
+        }
+      }
+    },
+    "keyCode46" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "M"
+          }
+        }
+      }
+    },
+    "keyCode47" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "."
+          }
+        }
+      }
+    },
+    "keyCode48" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􀅂"
+          }
+        }
+      }
+    },
+    "keyCode49" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁁺"
+          }
+        }
+      }
+    },
+    "keyCode50" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "<"
+          }
+        }
+      }
+    },
+    "keyCode51" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􀆛"
+          }
+        }
+      }
+    },
+    "keyCode52" : {
+      "extractionState" : "auto"
+    },
+    "keyCode53" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􀆧"
+          }
+        }
+      }
+    },
+    "keyCode54" : {
+      "extractionState" : "auto"
+    },
+    "keyCode55" : {
+      "extractionState" : "auto"
+    },
+    "keyCode56" : {
+      "extractionState" : "auto"
+    },
+    "keyCode57" : {
+      "extractionState" : "auto"
+    },
+    "keyCode58" : {
+      "extractionState" : "auto"
+    },
+    "keyCode59" : {
+      "extractionState" : "auto"
+    },
+    "keyCode60" : {
+      "extractionState" : "auto"
+    },
+    "keyCode61" : {
+      "extractionState" : "auto"
+    },
+    "keyCode62" : {
+      "extractionState" : "auto"
+    },
+    "keyCode63" : {
+      "extractionState" : "auto"
+    },
+    "keyCode64" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F17"
+          }
+        }
+      }
+    },
+    "keyCode65" : {
+      "extractionState" : "auto"
+    },
+    "keyCode66" : {
+      "extractionState" : "auto"
+    },
+    "keyCode67" : {
+      "extractionState" : "auto"
+    },
+    "keyCode68" : {
+      "extractionState" : "auto"
+    },
+    "keyCode69" : {
+      "extractionState" : "auto"
+    },
+    "keyCode70" : {
+      "extractionState" : "auto"
+    },
+    "keyCode71" : {
+      "extractionState" : "auto"
+    },
+    "keyCode72" : {
+      "extractionState" : "auto"
+    },
+    "keyCode73" : {
+      "extractionState" : "auto"
+    },
+    "keyCode74" : {
+      "extractionState" : "auto"
+    },
+    "keyCode75" : {
+      "extractionState" : "auto"
+    },
+    "keyCode76" : {
+      "extractionState" : "auto"
+    },
+    "keyCode77" : {
+      "extractionState" : "auto"
+    },
+    "keyCode78" : {
+      "extractionState" : "auto"
+    },
+    "keyCode79" : {
+      "extractionState" : "auto"
+    },
+    "keyCode80" : {
+      "extractionState" : "auto"
+    },
+    "keyCode81" : {
+      "extractionState" : "auto"
+    },
+    "keyCode82" : {
+      "extractionState" : "auto"
+    },
+    "keyCode83" : {
+      "extractionState" : "auto"
+    },
+    "keyCode84" : {
+      "extractionState" : "auto"
+    },
+    "keyCode85" : {
+      "extractionState" : "auto"
+    },
+    "keyCode86" : {
+      "extractionState" : "auto"
+    },
+    "keyCode87" : {
+      "extractionState" : "auto"
+    },
+    "keyCode88" : {
+      "extractionState" : "auto"
+    },
+    "keyCode89" : {
+      "extractionState" : "auto"
+    },
+    "keyCode90" : {
+      "extractionState" : "auto"
+    },
+    "keyCode91" : {
+      "extractionState" : "auto"
+    },
+    "keyCode92" : {
+      "extractionState" : "auto"
+    },
+    "keyCode93" : {
+      "extractionState" : "auto"
+    },
+    "keyCode94" : {
+      "extractionState" : "auto"
+    },
+    "keyCode95" : {
+      "extractionState" : "auto"
+    },
+    "keyCode96" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F5"
+          }
+        }
+      }
+    },
+    "keyCode97" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F6"
+          }
+        }
+      }
+    },
+    "keyCode98" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F7"
+          }
+        }
+      }
+    },
+    "keyCode99" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F3"
+          }
+        }
+      }
+    },
+    "keyCode100" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F8"
+          }
+        }
+      }
+    },
+    "keyCode101" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F9"
+          }
+        }
+      }
+    },
+    "keyCode102" : {
+      "extractionState" : "auto"
+    },
+    "keyCode103" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F11"
+          }
+        }
+      }
+    },
+    "keyCode104" : {
+      "extractionState" : "auto"
+    },
+    "keyCode105" : {
+      "extractionState" : "auto"
+    },
+    "keyCode106" : {
+      "extractionState" : "auto"
+    },
+    "keyCode107" : {
+      "extractionState" : "auto"
+    },
+    "keyCode108" : {
+      "extractionState" : "auto"
+    },
+    "keyCode109" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F10"
+          }
+        }
+      }
+    },
+    "keyCode110" : {
+      "extractionState" : "auto"
+    },
+    "keyCode111" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F12"
+          }
+        }
+      }
+    },
+    "keyCode112" : {
+      "extractionState" : "auto"
+    },
+    "keyCode113" : {
+      "extractionState" : "auto"
+    },
+    "keyCode114" : {
+      "extractionState" : "auto"
+    },
+    "keyCode115" : {
+      "extractionState" : "auto"
+    },
+    "keyCode116" : {
+      "extractionState" : "auto"
+    },
+    "keyCode117" : {
+      "extractionState" : "auto"
+    },
+    "keyCode118" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F4"
+          }
+        }
+      }
+    },
+    "keyCode119" : {
+      "extractionState" : "auto"
+    },
+    "keyCode120" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F2"
+          }
+        }
+      }
+    },
+    "keyCode121" : {
+      "extractionState" : "auto"
+    },
+    "keyCode122" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F1"
+          }
+        }
+      }
+    },
+    "keyCode123" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁉄"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁉄"
+          }
+        }
+      }
+    },
+    "keyCode124" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁉂"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁉂"
+          }
+        }
+      }
+    },
+    "keyCode125" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁾬"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁾬"
+          }
+        }
+      }
+    },
+    "keyCode126" : {
+      "extractionState" : "auto",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁾨"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "􁾨"
+          }
+        }
+      }
+    },
+    "keyCode127" : {
+      "extractionState" : "auto"
+    }
+  },
+  "version" : "1.0"
+}
