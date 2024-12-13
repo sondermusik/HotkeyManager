@@ -29,7 +29,7 @@ class Application: Identifiable, ObservableObject {
 
     /// User setting that indicates
     /// if the Apps Hotkeys should be fetched and displayed
-    var display: Bool?
+    var display: Bool
 
     /// The Children Items of the Application
     var items: [MenuItem]

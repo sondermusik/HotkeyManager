@@ -20,13 +20,8 @@ class MenuItem: Identifiable, ObservableObject {
     /// The displayed name of the menu item.
     let name: String
 
-    var type: MenuItemType
-
-    /// Indicates if the menu item sh
-    var display: Bool?
-
     /// The parent menu item of the current menu item.
-    let parent: MenuItem?
+    let parent: MenuSection
 
     /// The  ``Application`` that the menu item belongs to.
     let app: Application
@@ -34,34 +29,37 @@ class MenuItem: Identifiable, ObservableObject {
     /// The hotkey associated with the menu item, if applicable.
     var hotkey: Hotkey?
 
-    var children: [MenuItem] = []
+    // MARK: - User Settings
 
+    /// Indicates if the menu item sh
+    var hidden: Bool
 
     // MARK: - Initializers
 
     /// Designated initializer for MenuItem.
     init(
         id: String,
-        name: String,
         index: Int,
-        hotkey: Hotkey?,
-        type: MenuItemType,
+        name: String,
+        hidden: Bool,
         app: Application,
-        parent: MenuItem?,
-        display: Bool
+        parent: MenuSection,
+        hotkey: Hotkey?
     ) {
+        // Required
         self.id = id
-        self.name = name
         self.index = index
-        self.hotkey = hotkey
-        self.type = type
+        self.name = name
+        self.hidden = hidden
+        // Relationships
         self.app = app
-        self.display = display
         self.parent = parent
+        // Optional
+        self.hotkey = hotkey
     }
 
     /// Convenience initializer to create a MenuItem from a ``MenuBarElement``.
-    init?(from element: MenuBarElement, parent: MenuItem? = nil, children: [MenuItem] = []) {
+    init?(from element: MenuBarElement, parent: MenuSection) {
         guard let name = element.title else { return nil }
 
         self.id = element.id
@@ -69,31 +67,10 @@ class MenuItem: Identifiable, ObservableObject {
         self.index = element.index
         self.app = element.app
         self.parent = parent
+        self.hidden = false
 
         if element.role == .hotkey {
             self.hotkey = Hotkey(from: element)
-            self.type = .hotkey
-
-        } else {
-            self.type = element.role.menuItemRole
         }
-    }
-
-    /// Adds child menu items to the current menu item.
-    func addChildren(_ children: [MenuItem]) {
-        self.children.append(contentsOf: children)
-    }
-
-    /// Recursively checks if the current `MenuItem` or any of its descendants have a `type` equal to `.hotkey`.
-    func containsHotkey() -> Bool {
-        if self.type == .hotkey {
-            return true
-        }
-        for child in children {
-            if child.containsHotkey() {
-                return true
-            }
-        }
-        return false
     }
 }
