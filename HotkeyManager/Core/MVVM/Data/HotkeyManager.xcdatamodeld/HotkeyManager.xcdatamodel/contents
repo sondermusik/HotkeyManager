@@ -24,7 +24,7 @@
         <attribute name="name" attributeType="String"/>
         <relationship name="app" maxCount="1" deletionRule="Nullify" destinationEntity="AppEntity" inverseName="sections" inverseEntity="AppEntity"/>
         <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuSectionEntity" inverseName="parent" inverseEntity="MenuSectionEntity"/>
-        <relationship name="items" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MenuItemEntity" inverseName="parent" inverseEntity="MenuItemEntity"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MenuItemEntity" inverseName="parent" inverseEntity="MenuItemEntity"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MenuSectionEntity" inverseName="children" inverseEntity="MenuSectionEntity"/>
     </entity>
 </model>

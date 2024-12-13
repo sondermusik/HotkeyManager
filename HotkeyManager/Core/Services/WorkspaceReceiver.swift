@@ -20,17 +20,16 @@ internal final class WorkspaceReceiver {
     /// Fetches all currently running apps across all workspaces.
     func fetchAllRunningApps(limit: Int = 4) async -> [NSRunningApplication] {
         let workspaceApps = await fetchWorkspaceApps()
-        let filteredApps = workspaceApps.filter { $0.activationPolicy == .regular }
 
-        if filteredApps.count >= limit {
-            return Array(filteredApps.prefix(limit))
+        if workspaceApps.count >= limit {
+            return Array(workspaceApps.prefix(limit))
         }
 
         let additionalApps = await fetchRunningApps(limit: limit)
             .filter { app in
-                !filteredApps.contains { $0.bundleIdentifier == app.bundleIdentifier }
+                !workspaceApps.contains { $0.bundleIdentifier == app.bundleIdentifier }
             }
-        return filteredApps + additionalApps
+        return workspaceApps + additionalApps
     }
 
     /// Fetches all global apps where activation policy is not `.regular`,
@@ -39,6 +38,7 @@ internal final class WorkspaceReceiver {
         let runningApps = workspace.runningApplications
         return runningApps.filter { app in
             app.activationPolicy != .regular &&
+            app.bundleIdentifier != Bundle.main.bundleIdentifier &&
             !(app.bundleIdentifier?.hasPrefix("com.apple") ?? false)
         }
     }
@@ -49,7 +49,7 @@ internal final class WorkspaceReceiver {
     /// Fetches a list of running apps using `NSWorkspace`.
     private func fetchRunningApps(limit: Int) async -> [NSRunningApplication] {
         let runningApps = workspace.runningApplications
-        let filteredApps = runningApps.filter { $0.activationPolicy == .regular }
+        let filteredApps = runningApps.filter { $0.activationPolicy == .regular && $0.bundleIdentifier != Bundle.main.bundleIdentifier }
         return Array(filteredApps.prefix(limit))
     }
 
@@ -68,6 +68,7 @@ internal final class WorkspaceReceiver {
 
             let runningApps = workspace.runningApplications.filter { app in
                 guard let appName = app.localizedName else { return false }
+                guard app.bundleIdentifier != Bundle.main.bundleIdentifier else { return false }
                 return windowOwners.contains(appName)
             }
             continuation.resume(returning: runningApps)

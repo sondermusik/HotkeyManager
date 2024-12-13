@@ -11,8 +11,17 @@ import Combine
 // MARK: - DataController
 
 final class DataController: ObservableObject {
+    static let shared = DataController()
+
     private let container: NSPersistentContainer
     private(set) var viewContext: NSManagedObjectContext
+
+    // Shared background context
+       lazy var backgroundContext: NSManagedObjectContext = {
+           let context = container.newBackgroundContext()
+           context.automaticallyMergesChangesFromParent = true
+           return context
+       }()
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -37,14 +46,6 @@ final class DataController: ObservableObject {
 
             self?.setupNotifications()
         }
-    }
-
-    // MARK: - Creating Independent Background Context
-
-    func createBackgroundContext() -> NSManagedObjectContext {
-        let backgroundContext = container.newBackgroundContext()
-        backgroundContext.automaticallyMergesChangesFromParent = true
-        return backgroundContext
     }
 
     // MARK: - Core Data Save Operation
