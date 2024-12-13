@@ -334,9 +334,10 @@ internal struct MenuBarElement: Identifiable {
         }
     }
 
-    // MARK: - Helpers
+}
 
-    // MARK: - ID Generation
+extension MenuBarElement {
+    // MARK: - Helpers
 
     /// Generates a unique identifier for this element, combining the process ID, memory address, and index.
     ///
@@ -345,11 +346,8 @@ internal struct MenuBarElement: Identifiable {
         var processID: pid_t = 0
         AXUIElementGetPid(element, &processID) // Retrieve process ID
 
-        // Pointer address of the AXUIElement as a unique part of the ID
-        let elementAddress = Unmanaged.passUnretained(element).toOpaque().hashValue
-
         // Combine components into a unique string
-        return String(format: "%d-%d-%d", processID, elementAddress, index)
+        return String(format: "%d-%d-%d", processID, layer, index)
     }
 
     /// Creates a child element.

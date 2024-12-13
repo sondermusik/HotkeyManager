@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SectionView: View {
-    let section: MenuItem
+    let section: MenuSection
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -18,29 +18,22 @@ struct SectionView: View {
                 Spacer()
             }
 
+            // Use toMenuSection to get a mixed array of sections and items
             ForEach(
-                section.children
-                    .filter { child in child.type == MenuItemType.section || child.type == MenuItemType.hotkey }
-                    .sorted(by: { $0.index < $1.index }),
-                id: \.id
-            ) { child in
-                // Check if the child is a section and contains a hotkey
-                if child.type == MenuItemType.section && child.containsHotkey() {
-                    SectionView(section: child)
+                section.toMenuSection(),
+                id: \.self // The id is based on the MenuResult itself (MenuItem or MenuSection)
+            ) { result in
+                // Handle MenuSection
+                if case .section(let childSection) = result, childSection.containsHotkey() {
+                    SectionView(section: childSection)
                         .padding(6)
                 }
-                
-                // Check if the child is a hotkey
-                if child.type == MenuItemType.hotkey {
-                    HStack {
-                        Text(child.name)
-                        Spacer()
-                        Text(child.hotkey?.toDisplay() ?? "")
-                    }
-                    .padding(6)
+
+                // Handle MenuItem and ensure it has a hotkey
+                if case .item(let item) = result, let _ = item.hotkey, item.hidden != true {
+                    HotkeyListView(item: item)
                 }
             }
-
         }
         .padding(6)
         .overlay(

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Represents a menu item within a menu section.
 class MenuItem: Identifiable, ObservableObject {
     // MARK: - Properties
 
@@ -41,36 +42,46 @@ class MenuItem: Identifiable, ObservableObject {
         id: String,
         index: Int,
         name: String,
-        hidden: Bool,
         app: Application,
         parent: MenuSection,
-        hotkey: Hotkey?
+        hotkey: Hotkey?,
+        hidden: Bool
     ) {
         // Required
         self.id = id
         self.index = index
         self.name = name
-        self.hidden = hidden
         // Relationships
         self.app = app
         self.parent = parent
         // Optional
         self.hotkey = hotkey
+
+        self.hidden = hidden
     }
+}
 
+// MARK: - Element
+
+extension MenuItem {
     /// Convenience initializer to create a MenuItem from a ``MenuBarElement``.
-    init?(from element: MenuBarElement, parent: MenuSection) {
-        guard let name = element.title else { return nil }
+    convenience init?(from element: MenuBarElement, parent: MenuSection) {
+        guard let title = element.title else { return nil }
 
-        self.id = element.id
-        self.name = name
-        self.index = element.index
-        self.app = element.app
-        self.parent = parent
-        self.hidden = false
+        var name = title
 
-        if element.role == .hotkey {
-            self.hotkey = Hotkey(from: element)
+        if element.role == .separator {
+            name = "Separator"
         }
+
+        self.init(
+            id: element.id,
+            index: element.index,
+            name: name,
+            app: element.app,
+            parent: parent,
+            hotkey: Hotkey(from: element),
+            hidden: false
+        )
     }
 }

@@ -110,17 +110,17 @@ internal enum ConstMenuBar {
         /// This abstraction categorizes menu items with specific key bindings for quick access.
         case hotkey = "Hotkey"
 
-        /// Maps `MenuItemTypes` to a general-purpose `MenuItemType` for use in broader menu management contexts.
-        ///
-        /// This property ensures compatibility with other systems that process menu items at a higher abstraction level.
-        var menuItemRole: MenuItemType {
-            switch self {
-            case .hotkey:           return .hotkey
-            case .separator:        return .separator
-            case .section:          return .section
-            default:                return .item
-            }
-        }
+//        /// Maps `MenuItemTypes` to a general-purpose `MenuItemType` for use in broader menu management contexts.
+//        ///
+//        /// This property ensures compatibility with other systems that process menu items at a higher abstraction level.
+//        var menuItemRole: MenuItemType {
+//            switch self {
+//            case .hotkey:           return .hotkey
+//            case .separator:        return .separator
+//            case .section:          return .section
+//            default:                return .item
+//            }
+//        }
     }
 
     // MARK: - Attributes

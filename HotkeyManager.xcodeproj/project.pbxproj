@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C11AE2F62D0C93C700811F3E /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11AE2F52D0C93C700811F3E /* MenuSection.swift */; };
+		C11AE2F82D0C9CF800811F3E /* MenuResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11AE2F72D0C9CF800811F3E /* MenuResult.swift */; };
+		C11AE2FF2D0CCE5700811F3E /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11AE2FE2D0CCE5700811F3E /* AppDataManager.swift */; };
+		C11AE3012D0CD50800811F3E /* MenuDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11AE3002D0CD50800811F3E /* MenuDataManager.swift */; };
+		C11AE3042D0CE95B00811F3E /* HotkeyColorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11AE3032D0CE95B00811F3E /* HotkeyColorText.swift */; };
+		C11AE3072D0CEED100811F3E /* HotkeyMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11AE3062D0CEED100811F3E /* HotkeyMenuView.swift */; };
+		C11AE3092D0CEEF900811F3E /* HotkeyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11AE3082D0CEEF900811F3E /* HotkeyListView.swift */; };
 		C1DAFD782D09BE3C00D8B418 /* HotkeyManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFD772D09BE3C00D8B418 /* HotkeyManagerApp.swift */; };
 		C1DAFD7A2D09BE3C00D8B418 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFD792D09BE3C00D8B418 /* ContentView.swift */; };
 		C1DAFD7C2D09BE3E00D8B418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1DAFD7B2D09BE3E00D8B418 /* Assets.xcassets */; };
@@ -19,7 +26,6 @@
 		C1DAFDAA2D09CF4000D8B418 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDA92D09CF4000D8B418 /* Application.swift */; };
 		C1DAFDAF2D09D12800D8B418 /* HotkeyManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDAD2D09D12800D8B418 /* HotkeyManager.xcdatamodeld */; };
 		C1DAFDB22D09D1D900D8B418 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDB12D09D1D900D8B418 /* DataController.swift */; };
-		C1DAFDB42D09D38A00D8B418 /* MenuItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDB32D09D38A00D8B418 /* MenuItemType.swift */; };
 		C1DAFDB62D09D3EB00D8B418 /* Hotkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDB52D09D3EB00D8B418 /* Hotkey.swift */; };
 		C1DAFDB82D09D44600D8B418 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAFDB72D09D44600D8B418 /* KeyCode.swift */; };
 		C1DAFDBC2D09D47500D8B418 /* KeyCodes.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C1DAFDBB2D09D47500D8B418 /* KeyCodes.xcstrings */; };
@@ -51,6 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C11AE2F52D0C93C700811F3E /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
+		C11AE2F72D0C9CF800811F3E /* MenuResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuResult.swift; sourceTree = "<group>"; };
+		C11AE2FE2D0CCE5700811F3E /* AppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataManager.swift; sourceTree = "<group>"; };
+		C11AE3002D0CD50800811F3E /* MenuDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDataManager.swift; sourceTree = "<group>"; };
+		C11AE3032D0CE95B00811F3E /* HotkeyColorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyColorText.swift; sourceTree = "<group>"; };
+		C11AE3062D0CEED100811F3E /* HotkeyMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyMenuView.swift; sourceTree = "<group>"; };
+		C11AE3082D0CEEF900811F3E /* HotkeyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyListView.swift; sourceTree = "<group>"; };
 		C1DAFD742D09BE3C00D8B418 /* HotkeyManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotkeyManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DAFD772D09BE3C00D8B418 /* HotkeyManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManagerApp.swift; sourceTree = "<group>"; };
 		C1DAFD792D09BE3C00D8B418 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,7 +81,6 @@
 		C1DAFDA92D09CF4000D8B418 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		C1DAFDAE2D09D12800D8B418 /* HotkeyManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotkeyManager.xcdatamodel; sourceTree = "<group>"; };
 		C1DAFDB12D09D1D900D8B418 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		C1DAFDB32D09D38A00D8B418 /* MenuItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemType.swift; sourceTree = "<group>"; };
 		C1DAFDB52D09D3EB00D8B418 /* Hotkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotkey.swift; sourceTree = "<group>"; };
 		C1DAFDB72D09D44600D8B418 /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 		C1DAFDBB2D09D47500D8B418 /* KeyCodes.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = KeyCodes.xcstrings; sourceTree = "<group>"; };
@@ -107,6 +119,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C11AE2F92D0CBE4B00811F3E /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDAC2D09D11600D8B418 /* Data */,
+				C1DAFDC92D09E06C00D8B418 /* ViewModel */,
+				C11AE2FA2D0CBE9400811F3E /* Models */,
+				C1DAFDC32D09DF6100D8B418 /* Manager */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		C11AE2FA2D0CBE9400811F3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C11AE2FC2D0CBEAD00811F3E /* Menu */,
+				C1DAFDA92D09CF4000D8B418 /* Application.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C11AE2FB2D0CBEA300811F3E /* MenuItem */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAFDB52D09D3EB00D8B418 /* Hotkey.swift */,
+				C1DAFDA72D09CEF000D8B418 /* MenuItem.swift */,
+			);
+			path = MenuItem;
+			sourceTree = "<group>";
+		};
+		C11AE2FC2D0CBEAD00811F3E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C11AE2F72D0C9CF800811F3E /* MenuResult.swift */,
+				C11AE2F52D0C93C700811F3E /* MenuSection.swift */,
+				C11AE2FB2D0CBEA300811F3E /* MenuItem */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		C11AE3022D0CE94800811F3E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C11AE3032D0CE95B00811F3E /* HotkeyColorText.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C11AE3052D0CEEBE00811F3E /* Hotkey List */ = {
+			isa = PBXGroup;
+			children = (
+				C11AE3062D0CEED100811F3E /* HotkeyMenuView.swift */,
+				C11AE3082D0CEEF900811F3E /* HotkeyListView.swift */,
+			);
+			path = "Hotkey List";
+			sourceTree = "<group>";
+		};
 		C1DAFD6B2D09BE3C00D8B418 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +240,8 @@
 				C1DAFD792D09BE3C00D8B418 /* ContentView.swift */,
 				C1DAFDCF2D09EFBA00D8B418 /* SectionListView.swift */,
 				C1DAFDD12D09EFF700D8B418 /* SectionView.swift */,
+				C11AE3052D0CEEBE00811F3E /* Hotkey List */,
+				C11AE3022D0CE94800811F3E /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +249,7 @@
 		C1DAFDA42D09CE0800D8B418 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C1DAFDC42D09DF9000D8B418 /* AccessibilityPermissionManager.swift */,
 				C1DAFDC72D09E04700D8B418 /* WorkspaceReceiver.swift */,
 				C1DAFDC12D09DF3400D8B418 /* MenuBar */,
 			);
@@ -188,11 +259,8 @@
 		C1DAFDAB2D09D10800D8B418 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C1DAFDC92D09E06C00D8B418 /* ViewModel */,
-				C1DAFDC32D09DF6100D8B418 /* Manager */,
+				C11AE2F92D0CBE4B00811F3E /* MVVM */,
 				C1DAFDB92D09D45D00D8B418 /* Constants */,
-				C1DAFDAC2D09D11600D8B418 /* Data */,
-				C1DAFDB02D09D14900D8B418 /* Models */,
 				C1DAFDA42D09CE0800D8B418 /* Services */,
 			);
 			path = Core;
@@ -205,17 +273,6 @@
 				C1DAFDB12D09D1D900D8B418 /* DataController.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		C1DAFDB02D09D14900D8B418 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C1DAFDA92D09CF4000D8B418 /* Application.swift */,
-				C1DAFDB52D09D3EB00D8B418 /* Hotkey.swift */,
-				C1DAFDA72D09CEF000D8B418 /* MenuItem.swift */,
-				C1DAFDB32D09D38A00D8B418 /* MenuItemType.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		C1DAFDB92D09D45D00D8B418 /* Constants */ = {
@@ -239,7 +296,8 @@
 		C1DAFDC32D09DF6100D8B418 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				C1DAFDC42D09DF9000D8B418 /* AccessibilityPermissionManager.swift */,
+				C11AE2FE2D0CCE5700811F3E /* AppDataManager.swift */,
+				C11AE3002D0CD50800811F3E /* MenuDataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -393,23 +451,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C11AE3092D0CEEF900811F3E /* HotkeyListView.swift in Sources */,
 				C1DAFDCE2D09E5DE00D8B418 /* HotkeyVM.swift in Sources */,
 				C1DAFDC52D09DF9000D8B418 /* AccessibilityPermissionManager.swift in Sources */,
 				C1DAFDD22D09EFF700D8B418 /* SectionView.swift in Sources */,
 				C1DAFDB82D09D44600D8B418 /* KeyCode.swift in Sources */,
 				C1DAFDAA2D09CF4000D8B418 /* Application.swift in Sources */,
 				C1DAFDC82D09E04700D8B418 /* WorkspaceReceiver.swift in Sources */,
+				C11AE3042D0CE95B00811F3E /* HotkeyColorText.swift in Sources */,
 				C1DAFDCC2D09E08400D8B418 /* AppVM.swift in Sources */,
+				C11AE2F82D0C9CF800811F3E /* MenuResult.swift in Sources */,
+				C11AE2FF2D0CCE5700811F3E /* AppDataManager.swift in Sources */,
 				C1DAFDAF2D09D12800D8B418 /* HotkeyManager.xcdatamodeld in Sources */,
 				C1DAFDB62D09D3EB00D8B418 /* Hotkey.swift in Sources */,
 				C1DAFDB22D09D1D900D8B418 /* DataController.swift in Sources */,
-				C1DAFDB42D09D38A00D8B418 /* MenuItemType.swift in Sources */,
 				C1DAFDC02D09D88100D8B418 /* ConstMenuBar.swift in Sources */,
 				C1DAFDD02D09EFBA00D8B418 /* SectionListView.swift in Sources */,
 				C1DAFD7A2D09BE3C00D8B418 /* ContentView.swift in Sources */,
 				C1DAFDBE2D09D72F00D8B418 /* MenuBarElement.swift in Sources */,
 				C1DAFDA82D09CEF000D8B418 /* MenuItem.swift in Sources */,
+				C11AE3072D0CEED100811F3E /* HotkeyMenuView.swift in Sources */,
+				C11AE2F62D0C93C700811F3E /* MenuSection.swift in Sources */,
 				C1DAFDA62D09CE1B00D8B418 /* MenuBarService.swift in Sources */,
+				C11AE3012D0CD50800811F3E /* MenuDataManager.swift in Sources */,
 				C1DAFD782D09BE3C00D8B418 /* HotkeyManagerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

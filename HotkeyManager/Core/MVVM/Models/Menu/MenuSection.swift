@@ -74,37 +74,6 @@ class MenuSection: Identifiable, ObservableObject {
     }
 }
 
-// MARK: - Mixed Array
-
-extension MenuSection {
-    /// Returns a mixed array of `MenuResult` containing both sections and items sorted by index.
-    func toMenuSection() -> [MenuResult] {
-        // Create an array of mixed MenuResult elements
-        var result: [MenuResult] = []
-
-        // Add all child sections as MenuResults
-        result.append(contentsOf: children.map { MenuResult.section($0) })
-
-        // Add all items as MenuResults
-        result.append(contentsOf: items.map { MenuResult.item($0) })
-
-        // Sort the result array by index of sections and items
-        result.sort {
-            switch ($0, $1) {
-            case (.section(let section1), .section(let section2)):
-                return section1.index < section2.index
-            case (.item(let item1), .item(let item2)):
-                return item1.index < item2.index
-            case (.section(let section1), .item(let item2)):
-                return section1.index < item2.index
-            case (.item(let item1), .section(let section2)):
-                return item1.index < section2.index
-            }
-        }
-        return result
-    }
-}
-
 // MARK: - Element Initializer
 
 extension MenuSection {
@@ -149,5 +118,36 @@ extension MenuSection {
             allItems.append(contentsOf: child.flattenedItems())
         }
         return allItems
+    }
+}
+
+// MARK: - Mixed Array
+
+extension MenuSection {
+    /// Returns a mixed array of `MenuResult` containing both sections and items sorted by index.
+    func toMenuSection() -> [MenuResult] {
+        // Create an array of mixed MenuResult elements
+        var result: [MenuResult] = []
+
+        // Add all child sections as MenuResults
+        result.append(contentsOf: children.map { MenuResult.section($0) })
+
+        // Add all items as MenuResults
+        result.append(contentsOf: items.map { MenuResult.item($0) })
+
+        // Sort the result array by index of sections and items
+        result.sort {
+            switch ($0, $1) {
+            case (.section(let section1), .section(let section2)):
+                return section1.index < section2.index
+            case (.item(let item1), .item(let item2)):
+                return item1.index < item2.index
+            case (.section(let section1), .item(let item2)):
+                return section1.index < item2.index
+            case (.item(let item1), .section(let section2)):
+                return item1.index < section2.index
+            }
+        }
+        return result
     }
 }

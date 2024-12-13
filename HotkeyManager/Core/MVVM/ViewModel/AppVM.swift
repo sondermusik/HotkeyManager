@@ -14,8 +14,14 @@ final class AppVM: ObservableObject {
 
     // MARK: - Published Properties
 
+    let appDataManager = AppDataManager()
+
     @Published var activeApp: Application?
-    @Published var recentApps: [Application] = []
+    @Published var recentApps: [Application] = [] {
+        didSet {
+            activeApp = recentApps.first
+        }
+    }
     @Published var globalApp: [Application] = []
 
     private let workspace = WorkspaceReceiver()
@@ -27,8 +33,6 @@ final class AppVM: ObservableObject {
     /// Activates the specified app and its menu traversal.
     func activateApp(_ app: Application) {
         guard app != activeApp else { return }
-
-        activeApp = app
 
         if !app.global {
             recentApps.removeAll(where: { $0.id == app.id })
@@ -53,10 +57,12 @@ extension AppVM {
 
             // Update properties on the main thread
             DispatchQueue.main.async {
-                self.globalApp = globalApps
                 self.recentApps = apps
-                self.activeApp = apps.first
+                self.globalApp = globalApps
             }
+
+            _ = appDataManager.batchFetchOrCreateApps(apps)
+
         }
     }
 }

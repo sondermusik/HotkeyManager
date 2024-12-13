@@ -51,10 +51,18 @@ struct ContentView: View {
             // List of menu items
             SectionListView()
 
-
-            // Request Accessibility
-            Button("Request Accessibility") {
-                AccessibilityPermissionManager.shared.ensureAccessibilityPermissions()
+            HStack {
+                // Request Accessibility
+                Button("Request Accessibility") {
+                    AccessibilityPermissionManager.shared.ensureAccessibilityPermissions()
+                }
+                Spacer()
+                // Reset Hotkeys
+                Button("Open Core Data Location") {
+                    if let url = DataController.shared.persistentStoreURL() {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
             }
 
         }

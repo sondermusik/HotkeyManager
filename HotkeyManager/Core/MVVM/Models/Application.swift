@@ -58,6 +58,10 @@ class Application: Identifiable, ObservableObject {
             return nil
         }
 
+        guard id != Bundle.main.bundleIdentifier else {
+            return nil
+        }
+
         // Initialize all properties
         self.id = id
         self.name = name

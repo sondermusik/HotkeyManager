@@ -5,7 +5,6 @@
 //  Created by Laurens Karpf on 11.12.24.
 //
 
-import Foundation
 import SwiftUI
 
 class Hotkey {
@@ -40,25 +39,6 @@ class Hotkey {
         self.control = control
         self.function = function
     }
-
-    init?(from element: MenuBarElement) {
-        guard let code = element.keyCode else { return nil }
-        guard let code = KeyCode(rawValue: code) else { return nil }
-        self.keyCode = code
-        if let modifiers = element.modifiers {
-            modifierFromElement(mask: modifiers)
-        }
-    }
-
-    /// Initializes a `Hotkey` from a `MenuItemEntity`.
-    init(from entity: MenuItemEntity) {
-        guard let validKeyCode = KeyCode(rawValue: Int(entity.keyCode)) else {
-            fatalError("Invalid keyCode in MenuItemEntity: \(entity.keyCode)")
-        }
-        self.keyCode = validKeyCode
-
-        modifierFromInt16(mask: entity.modifier)
-    }
 }
 
 extension Hotkey {
@@ -77,9 +57,18 @@ extension Hotkey {
     }
 }
 
-extension Hotkey {
-    // MARK: - Modifier
+// MARK: - CoreData
 
+extension Hotkey {
+    /// Initializes a `Hotkey` from a `MenuItemEntity`.
+    convenience init?(from entity: MenuItemEntity) {
+        guard let validKeyCode = KeyCode(rawValue: Int(entity.keyCode)) else {
+            return nil
+        }
+        self.init(keyCode: validKeyCode.rawValue)
+
+        modifierFromInt16(mask: entity.modifier)
+    }
     /// Modifier Init from Int16 (bitmask) used for CoreData
     func modifierFromInt16 (mask: Int16) {
         self.command = (mask & 0x01) != 0      // Command (Bit 0)
@@ -98,6 +87,20 @@ extension Hotkey {
         if control { mask |= 0x08 }   // Control (Bit 3)
         if function { mask |= 0x10 }  // Function (Bit 4)
         return mask
+    }
+}
+
+// MARK: - Element
+
+extension Hotkey {
+    /// Initializes a `Hotkey` from a ``MenuBarElement``.
+    convenience init?(from element: MenuBarElement) {
+        guard let code = element.keyCode else { return nil }
+        guard let code = KeyCode(rawValue: code) else { return nil }
+        self.init(keyCode: code.rawValue)
+        if let modifiers = element.modifiers {
+            modifierFromElement(mask: modifiers)
+        }
     }
 
     /// Modifier Init from ``MenuBarElement`` attributes

@@ -11,12 +11,13 @@ struct SectionListView: View {
     @EnvironmentObject var hotkeyVM: HotkeyVM
 
     var body: some View {
-        if hotkeyVM.appMenuItems.isEmpty {
+        if hotkeyVM.appMenu.isEmpty {
             Text("Loading menu items...")
         } else {
             List(
-                hotkeyVM.appMenuItems
+                hotkeyVM.appMenu
                     .sorted(by: { $0.index < $1.index })
+                    .filter { $0.containsHotkey() }
             ) { category in
                 SectionView(section: category)
                     .padding(.vertical, 6)

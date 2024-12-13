@@ -22,13 +22,13 @@ internal class MenuBarService {
     ///   - app: The application whose menu items are to be loaded.
     ///   - chunkSize: The number of items to yield per chunk.
     /// - Returns: An `AsyncStream` of `MenuItem` arrays.
-    func loadMenuItems(for app: Application, chunkSize: Int = 75) -> AsyncStream<[MenuItem]> {
+    func loadMenuItems(for app: Application) -> AsyncStream<MenuResult> {
         AsyncStream { continuation in
             Task(priority: task){
                 do {
                     print("Starting to load menu items for \(app.name)")
 
-                    let stream = try await self.getMenuItems(for: app, chunkSize: chunkSize)
+                    let stream = try await self.getMenuItems(for: app)
 
                     for await chunk in stream {
                         if Task.isCancelled {
@@ -37,7 +37,6 @@ internal class MenuBarService {
                             return
                         }
                         continuation.yield(chunk)
-                        print("Yielded \(chunk.count) menu items for \(app.name)")
                     }
 
                     continuation.finish()
@@ -61,15 +60,15 @@ internal class MenuBarService {
     ///   - app: The bundle identifier of the target application.
     ///   - chunkSize: The number of items per chunk to yield.
     /// - Returns: An `AsyncStream` of `MenuItem` arrays.
-    private func getMenuItems(for app: Application, chunkSize: Int = 25) async throws -> AsyncStream<[MenuItem]> {
+    private func getMenuItems(for app: Application) async throws -> AsyncStream<MenuResult> {
         AsyncStream { continuation in
-            Task(priority: task){
+            Task(priority: task) {
                 guard !Task.isCancelled else {
                     continuation.finish()
                     return
                 }
 
-                await withTaskGroup(of: Result<[MenuItem], Error>.self) { group in
+                await withTaskGroup(of: Result<MenuResult, Error>.self) { group in
                     for await section in self.getSections(for: app) {
                         if Task.isCancelled {
                             continuation.finish()
@@ -78,8 +77,13 @@ internal class MenuBarService {
 
                         group.addTask {
                             do {
-                                let results = try await self.traverseMenu(item: section, chunkSize: chunkSize)
-                                return .success(results)
+                                // Unwrap the optional result from traverseMenu
+                                if let results = try await self.traverseMenu(item: section) {
+                                    return .success(results)
+                                } else {
+                                    return .failure(NSError(domain: "MenuTraversal", code: 0, userInfo: [NSLocalizedDescriptionKey: "Traversal returned nil"]))
+                                }
+
                             } catch {
                                 return .failure(error)
                             }
@@ -146,32 +150,73 @@ internal class MenuBarService {
     ///   - item: The `MenuBarElement` to traverse.
     ///   - chunkSize: The number of items per chunk to yield.
     /// - Returns: An array of `MenuItem` objects, representing the items in the menu.
-    private func traverseMenu(item: MenuBarElement, chunkSize: Int = 25) async throws -> [MenuItem] {
+    /// - Returns: An array of `MenuItem` objects, representing the items in the menu.
+    private func traverseMenu(item: MenuBarElement, parent: MenuSection? = nil) async throws -> MenuResult? {
         guard !Task.isCancelled else {
             throw CancellationError()
         }
 
-        let children = try await withThrowingTaskGroup(of: [MenuItem].self) { group -> [MenuItem] in
-            for await child in await item.getChildren() {
-                group.addTask {
-                    try await self.traverseMenu(item: child, chunkSize: chunkSize)
+        // Collect children from getChildren
+        var childrenArray: [MenuBarElement] = []
+        for await child in await item.getChildren() {
+            childrenArray.append(child)
+        }
+
+        // Check if there are any children
+        guard !childrenArray.isEmpty else {
+            print("No children found for \(item.title ?? "unknown")")
+            if let parent {
+                if let item = MenuItem(from: item, parent: parent) {
+                    print("Created MenuItem for \(item.name)")
+                    return .item(item)
                 }
             }
+            return nil
+        }
 
-            var childItems: [MenuItem] = []
-            for try await childResults in group {
-                childItems.append(contentsOf: childResults)
+        // Process children in a task group
+        if let section = MenuSection(from: item, parent: parent) {
+            let children = try await withThrowingTaskGroup(of: MenuResult?.self) { group -> [MenuResult] in
+                for child in childrenArray {
+                    group.addTask {
+                        try await self.traverseMenu(item: child, parent: section)
+                    }
+                }
+
+                var childItems: [MenuResult] = []
+                for try await childResults in group {
+                    if let result = childResults { // Filter out nil results
+                        childItems.append(result)
+                    }
+                }
+                return childItems
             }
-            return childItems
-        }
 
-        if let menuItem = MenuItem(from: item, children: children) {
-            menuItem.addChildren(children)
-            return [menuItem]
+            // Filter children into MenuItems and MenuSections
+            let menuItems = children.compactMap { result -> MenuItem? in
+                if case .item(let menuItem) = result {
+                    return menuItem
+                }
+                return nil
+            }
+            section.addItems(menuItems)
+
+            let menuSections = children.compactMap { result -> MenuSection? in
+                if case .section(let menuSection) = result {
+                    return menuSection
+                }
+                return nil
+            }
+            section.addChildren(menuSections)
+
+            print("MenuSections: \(menuSections.count) MenuItems: \(menuItems.count)")
+
+            return .section(section)
         }
-        return []
+        print("Failed to create MenuSection")
+
+        return nil
     }
-
 
     /// Fetches child sections from a menu bar element.
     ///
